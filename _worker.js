@@ -2,28 +2,20 @@
 // <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:02 UTC<!--GAMFC-END-->.
 // @ts-ignore
 // https://github.com/bia-pain-bache/BPB-Worker-Panel
-
 import { connect } from 'cloudflare:sockets';
-
 // How to generate your own UUID:
 // https://www.uuidgenerator.net/
 // let userID = 'a789f661-6b98-4b92-ae77-190b0cbf83da';
-let userID = 'e880fd96-d307-4f62-a407-fe418535aa1c';
-
+let userID = 'f8056894-4ade-415f-91cb-06f9aed4fe1b';
 // https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
 // https://www.nslookup.io/domains/cdn-all.xn--b6gac.eu.org/dns-records/
 const proxyIPs= ['cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org','www.4chan.org'];
-
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
-
 let dohURL = 'https://cloudflare-dns.com/dns-query';
-
 let panelVersion = '2.3.3';
-
 if (!isValidUUID(userID)) {
     throw new Error('uuid is not valid');
 }
-
 export default {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
